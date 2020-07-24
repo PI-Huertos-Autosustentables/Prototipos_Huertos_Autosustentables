@@ -34,14 +34,15 @@ namespace Prototipos_Huertos_Autosustentables
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddControllersWithViews();
 
-            // Verificacion de Correo Electronico linea(36-40)  
+            // requires
             // using Microsoft.AspNetCore.Identity.UI.Services;
             // using WebPWrecover.Services;
             services.AddTransient<IEmailSender, EmailSender>();
             services.Configure<AuthMessageSenderOptions>(Configuration);
 
-            services.AddControllersWithViews();
+            
             services.AddRazorPages();
         }
 
