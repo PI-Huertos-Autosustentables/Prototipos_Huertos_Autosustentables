@@ -17,6 +17,7 @@ using Prototipos_Huertos_Autosustentables.Services;
 
 namespace Prototipos_Huertos_Autosustentables
 {
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
