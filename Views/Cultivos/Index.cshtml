@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Prototipos_Huertos_Autosustentables.Models.Cultivo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTipoCultivos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdRegiones)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCultivos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntroduccionCultivos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CuerpoCultivos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recomendaciones)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTipoCultivos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdRegiones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCultivos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntroduccionCultivos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CuerpoCultivos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Recomendaciones)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdCultivo">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdCultivo">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdCultivo">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
