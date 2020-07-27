@@ -16,6 +16,10 @@
     <PackageReference Include="SendGrid" Version="9.19.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\carrusel\" />
+  </ItemGroup>
+
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

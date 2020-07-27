@@ -22,11 +22,20 @@ namespace Prototipos_Huertos_Autosustentables.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
+        public IActionResult Mision()
         {
             return View();
         }
+        public IActionResult Vision()
+        {
+            return View();
+        }
+        public IActionResult Recomendaciones()
+        {
+            return View();
+        }
+
+
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
