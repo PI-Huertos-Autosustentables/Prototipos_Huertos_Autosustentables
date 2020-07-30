@@ -10,9 +10,10 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 bg-secondary ">
+        
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom shadow-lg mb-4 bg-secondary rounded-bottom">
             <div class="container">
-                <a class="navbar-brand text-white font-weight-bold" asp-area="" asp-controller="Home" asp-action="Index"><i class="fab fa-pagelines"></i> &nbsp; HUERTOS AUTOSUSTENTABLES</a>
+                <a class="navbar-brand text-white font-weight-bold" asp-area="" asp-controller="Home" asp-action="Index"><i class="fab fa-pagelines"></i>HUERTOS AUTOSUSTENTABLES</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,7 +21,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">                                
+                        <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> &nbsp;Inicio</a>
                         </li>
                         <li class="nav-item">
@@ -42,14 +43,19 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted bg-secondary">
-        <div class="container text-white">
-            &copy; 2020 - Huertos Autosustentables - <a asp-area="" asp-controller="Home" asp-action="Privacy">Galapagos</a> - 
-            <a asp-area="" asp-controller="Home" asp-action="Privacy">Costa</a>-
-            <a asp-area="" asp-controller="Home" asp-action="Privacy">Sierra</a>-
-            <a asp-area="" asp-controller="Home" asp-action="Privacy">Amazonia</a>
+    <br/>
+    <footer class=" footer text-muted bg-secondary text-center">
+        <div class="d-sm-inline-flex text-white p-2">
+            <a class="nav-link text-white">&copy; 2020 - Huertos Autosustentables &nbsp;</a>
+            <a class="nav-link text-white" asp-controller="Home">&nbsp;Galapagos</a>
+            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">&nbsp;Costa</a>
+            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">&nbsp;Sierra</a>
+            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">&nbsp;Amazonia</a>&nbsp;&nbsp;&nbsp;
+            <div class="btn-outline-primary rounded ">
+                <a class="nav-link text-white" asp-area="Identity" asp-page="/Account/LoginAdmin"><i class="fas fa-user-shield"></i> &nbsp;Administrador</a>
+            </div>
         </div>
+      
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
