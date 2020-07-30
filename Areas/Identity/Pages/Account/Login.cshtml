@@ -7,7 +7,7 @@
 
 
     <div class="w-50 mx-auto rounded shadow-lg p-3 mb-5 rounded bg-light">
-        <h2 class="text-center">@ViewData["Title"]</h2>
+        <h2 class="text-center pt-3">@ViewData["Title"]</h2>
         <div class="w-75 mx-auto">
             <section>
                 <form id="account" method="post">
@@ -39,9 +39,6 @@
                         </h6>
                         <h6 class="font-weight-light">
                             <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Registrarse como nuevo usuario</a>
-                        </h6>
-                        <h6 class="font-weight-light">
-                            <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Reenviar confirmación por correo electrónico</a>
                         </h6>
                     </div>
                 </form>

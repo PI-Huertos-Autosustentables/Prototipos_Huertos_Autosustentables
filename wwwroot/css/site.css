@@ -23,7 +23,12 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
-
+.bg-nav {
+    background-color: #546E7A;
+}
+.bg-fotter {
+    background-color: #546E7A;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
