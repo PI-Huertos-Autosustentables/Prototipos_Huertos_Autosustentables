@@ -35,6 +35,15 @@ namespace Prototipos_Huertos_Autosustentables.Controllers
             return View();
         }
 
+        public IActionResult Amazonia()
+        {
+            return View();
+        }
+
+        public IActionResult DetalleAmazonia()
+        {
+            return View();
+        }
 
 
 

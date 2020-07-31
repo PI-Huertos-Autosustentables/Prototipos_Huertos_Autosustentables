@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Link Estilo Font-->
+    <link href="https://fonts.googleapis.com/css?family=Solway:700|Source+Sans+Pro&display=swap" rel="stylesheet">
+    <!--Fontwesome-->
+    <script src="https://kit.fontawesome.com/2326cb3f10.js" crossorigin="anonymous"></script>
+    <!--Link Estilos Css-->
+    <link rel="stylesheet" href="~/GeneralCss/clasificacion.css">
+    <title>Lista de productos</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <header>
+            <div class="logo">
+                <h1>Eliga el tipo de producto que desee sembrar !!</h1>
+
+            </div>
+            <!--Formulario para la barra de busqueda-->
+            <form action="">
+                <input type="text" class="barra-busqueda" id="barra-busqueda" placeholder="Buscar">
+            </form>
+            <!--Catagorías-->
+            <div class="categorias" id="categorias">
+                <a href="#" class="activo">Todos</a>
+                <a href="#">Frutas</a>
+                <a href="#">Verduras</a>
+                <a href="#">Hortalizas</a>
+
+            </div>
+        </header>
+
+        <!--Grid-->
+        <section class="grid" id="grid">
+
+            <div class="item"
+                 data-categoria="frutas">
+
+
+                <div class="item-contenido">
+                    <a asp-controller="Home" asp-action="DetalleAmazonia"><img src="~/Usuario_imagen/descarga (3).jpg" alt=""></a>
+                </div>
+            </div>
+
+            <div class="item"
+                 data-categoria="verduras">
+
+                <div class="item-contenido">
+                    <a asp-controller="Home" asp-action="DetalleAmazonia"><img src="~/Usuario_imagen/pimiento.jpg" alt=""></a>
+                </div>
+
+
+            </div>
+
+            <div class="item"
+                 data-categoria="Hortalizas">
+
+                <div class="item-contenido">
+                    <a asp-controller="Home" asp-action="DetalleAmazonia"><img src="~/Usuario_imagen/zanahorias.jpg" alt=""></a>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
+
+
+    <script lang="javaScript">
+        const grid = new Muuri('.grid', {
+            layout: {
+                rounding: false
+            }
+        });
+
+        window.addEventListener('load', () => {
+            grid.refreshItems().layout();
+            document.getElementById('grid').classList.add('imagenes-cargadas');
+
+            // Agregamos los listener de los enlaces para filtrar por categoria.
+            const enlaces = document.querySelectorAll('#categorias a');
+            enlaces.forEach((elemento) => {
+                elemento.addEventListener('click', (evento) => {
+                    evento.preventDefault();
+                    enlaces.forEach((enlace) => enlace.classList.remove('activo'));
+                    evento.target.classList.add('activo');
+
+                    const categoria = evento.target.innerHTML.toLowerCase();
+                    categoria === 'todos' ? grid.filter('[data-categoria]') : grid.filter(`[data-categoria="${categoria}"]`);
+                });
+            });
+
+            //Agregamos el listener para la barra de busqueda
+            document.querySelector('#barra-busqueda').addEventListener('input', (evento) => {
+                const busqueda = evento.target.value;
+                grid.filter((item) => item.getElement().dataset.etiquetas.includes(busqueda));
+            });
+
+            //Listener para las imagener - OVERLEY
+            const overlay = document.getElementById('overlay');
+            document.querySelectorAll('.grid .item img').forEach((elemento) => {
+                elemento.addEventListener('click', () => {
+
+                    const ruta = elemento.getAttribute('src');
+                    const descripcion = elemento.parentNode.parentNode.dataset.descripcion;
+
+                    overlay.classList.add('activo');
+                    document.querySelector('#overlay img').src = ruta;
+                    document.querySelector('#overlay .descripcion').innerHTML = descripcion;
+                });
+
+            });
+
+            //EventListener del botòn cerrar
+
+            document.querySelector('#btn-cerrar-popup').addEventListener('click', () => {
+                overlay.classList.remove('activo');
+            });
+
+            //EventListener del overlay
+
+            overlay.addEventListener('click', (evento) => {
+                evento.target.id === 'overlay' ? overlay.classList.remove('activo') : '';
+            });
+        });
+
+    </script>
+</body>
+
+</html>
