@@ -1,57 +1,52 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Registrate";
 }
 
-<h1>@ViewData["Title"]</h1>
-
-<div class="row">
-    <div class="col-md-4">
+<div class="w-50 mx-auto rounded shadow-lg p-3 mb-5 rounded bg-light">
+    <h2 class="text-center pt-2">@ViewData["Title"]</h2>
+    <div class="w-75 mx-auto">
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h4>Create a new account.</h4>
             <hr />
-            <div asp-validation-summary="All" class="text-danger"></div>
+            <p>Llené los siguientes campos correctamente</p>
+            
             <div class="form-group">
-                <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" class="form-control" />
+                <label asp-for="Input.Email"><i class="fas fa-envelope-square"></i> &nbsp;Correo Electrónico:</label>
+                <input asp-for="Input.Email" class="form-control text-wrap" />
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.Password"></label>
+                <label asp-for="Input.Password"><i class="fas fa-key"></i> &nbsp;Constraseña:</label>
                 <input asp-for="Input.Password" class="form-control" />
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.ConfirmPassword"></label>
+                <label asp-for="Input.ConfirmPassword"><i class="fas fa-key"></i> &nbsp;Confirmar contraseña:</label>
                 <input asp-for="Input.ConfirmPassword" class="form-control" />
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-outline-secondary">Confirmar <i class="fas fa-check-circle"></i></button>
         </form>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
         <section>
-            <h4>Use another service to register.</h4>
-            <hr />
+            
+            <p class="text-center"> ó <hr /></p>
             @{
                 if ((Model.ExternalLogins?.Count ?? 0) == 0)
                 {
                     <div>
                         <p>
-                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                            for details on setting up this ASP.NET application to support logging in via external services.
                         </p>
                     </div>
                 }
                 else
                 {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal mx-auto">
                         <div>
-                            <p>
+                            <p class="text-center">
                                 @foreach (var provider in Model.ExternalLogins)
                                 {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                    <button type="submit" class="btn btn-outline-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>                                    
                                 }
                             </p>
                         </div>
@@ -61,6 +56,9 @@
         </section>
     </div>
 </div>
+       
+    
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
