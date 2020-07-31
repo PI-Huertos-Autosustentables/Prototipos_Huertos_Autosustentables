@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Relación css a html -->
+    <link rel="stylesheet" href="~/css_administrador/css_admi.css">
+    <!--Iconos-->
+    <script src="https://kit.fontawesome.com/c18cedb4c7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="Titulo">
+        <h1>Frutas</h1>
+    </div>
+    <!-- Grupo de botones  -->
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+            <input type="radio" name="options" id="option1" autocomplete="off"> Frutas
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option2" autocomplete="off"> Verduras
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3" autocomplete="off"> Hortalizas
+        </label>
+    </div>
+    <!-- buscador -->
+    <div class="contenedor-buscador">
+        <form class="form-inline">
+            <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Buscar" aria-label="Search">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <a asp-controller="Home" asp-action="Crear_Nuevo" ><input type="button" class="btn btn btn-success" value="Agregar"></a>
+        </form>
+    </div>
+
+    <!--Tabla de datos-->
+    <div class="contenedor-tabla">
+        <table class="table table-hover bg-light table-responsive-sm-md-lg-xl table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Fruta</th>
+                    <th scope="col">Region</th>
+                    <th scope="col">Precio Semilla</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Cereza</td>
+                    <td>Costa</td>
+                    <td>$4.99 lb aprox</td>
+                    <td><input class="btn btn-warning" type="button" value="Editar"></td>
+                    <td><input class="btn btn-danger" type="button" value="Eliminar"></td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Mango</td>
+                    <td>Costa</td>
+                    <td>$3.99 lb aprox</td>
+                    <td><input class="btn btn-warning" type="button" value="Editar"></td>
+                    <td><input class="btn btn-danger" type="button" value="Eliminar"></td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Claudia</td>
+                    <td>Costa</td>
+                    <td>$8.99 lb aprox</td>
+                    <td><input class="btn btn-warning" type="button" value="Editar"></td>
+                    <td><input class="btn btn-danger" type="button" value="Eliminar"></td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Papaya</td>
+                    <td>Costa</td>
+                    <td>$12.99 lb aprox</td>
+                    <td><input class="btn btn-warning" type="button" value="Editar"></td>
+                    <td><input class="btn btn-danger" type="button" value="Eliminar"></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>

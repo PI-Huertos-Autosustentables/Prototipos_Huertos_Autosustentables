@@ -11,13 +11,13 @@
     <div>
         @if (SignInManager.IsSignedIn(User))
         {
-            <p> Regiones en las que puedes cultivar </p>
+            <h4 class="text-center"> Regiones en las que puedes cultivar </h4>
 
 
             <div class="containers12">
 
                 <div class="box">
-                    <p>Amazonía</p>
+                    <p><b>Amazonía</b></p>
 
                     <a asp-controller="Home" asp-action="Amazonia"><img src="~/Usuario_imagen/Amozonia.jpg" alt=""></a>
 
@@ -28,7 +28,7 @@
 
 
                 <div class="box">
-                    <p>Costa</p>
+                    <p><b>Costa</b></p>
                     <a asp-controller="Home" asp-action="Amazonia"><img src="~/Usuario_imagen/costa.jpg" alt=""></a>
                     <div class="capa">
                         <h2> Costa</h2>
@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="box">
-                    <p>Sierra</p>
+                    <p><b>Sierra</b></p>
                     <a asp-controller="Home" asp-action="Amazonia"><img src="~/Usuario_imagen/sierra.jpg" alt=""></a>
                     <div class="capa">
                         <h3> Sierra</h3>
@@ -45,7 +45,7 @@
 
 
                 <div class="box">
-                    <p>Galápagos</p>
+                    <p><b>Galápagos</b></p>
                     <a asp-controller="Home" asp-action="Amazonia"><img src="~/Usuario_imagen/Galapagos.jpg" alt=""></a>
                     <div class="capa">
                         <h3> Galápagos</h3>
@@ -60,13 +60,12 @@
 
 
             <div class="caja">
-                <h3>
+                <h5>
                     Bienvenido Elige  la seccion  segun  en la Region  en la que  quieres cultivar
                     los productos, ya que es importante el clima, para que la plantas puedan crecer  sin ningun problema
-                </h3>
+                </h5>
             </div>
 
-            <p>Funciona craks </p>
         }
         else
         {

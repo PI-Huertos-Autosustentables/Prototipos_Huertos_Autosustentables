@@ -1,9 +1,4 @@
-﻿body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-
-.table {
+﻿.table {
     width: 100%;
     border: 8px solid rgb(137, 195, 243);
     border-collapse: collapse;

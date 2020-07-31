@@ -1,0 +1,109 @@
+﻿/*Estilos para el admi*/
+.Titulo
+{
+    text-align:center;
+}
+.btn-group {
+    width: 100%;
+    justify-content: center;
+    padding: 30px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    border-left: 3px solid white;
+    border-bottom: 0px solid white;
+}
+
+    .btn-group button {
+        background: #A93226;
+    }
+
+.form-inline {
+    justify-content: center;
+}
+
+/*contenedor del buscador*/
+.contenedor-buscador {
+    padding: 40px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    border-left: 3px solid white;
+    border-bottom: 0px solid white;
+}
+
+    .contenedor-buscador form input {
+        margin-left: 10px;
+    }
+/*animacion al buscador*/
+
+.form-inline input[type=text]:focus:not([readonly]) {
+    border: 1px solid #000000;
+    box-shadow: 1px 1px 1px 0 #000000;
+}
+
+.form-inlineinput[type=text] {
+    border: 1px solid #000000;
+}
+
+.form-inline .fas {
+    color: #000000;
+}
+/*Tabla*/
+.contenedor-tabla {
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    border-left: 3px solid white;
+    border-bottom: 0px solid white;
+    /*Pendiente*/
+}
+
+.table {
+    text-align: center;
+    align-items: center;
+    width: 90%;
+    margin: 30px auto;
+}
+
+/*Pantalla crear nuevo*/
+/*contenido para llenar el formulario */
+.contenido {
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding-bottom: 30px;
+}
+
+form .form-group {
+    border-radius: 10px;
+    padding: 30px 30px 0px 30px;
+    display: block;
+}
+
+form .botones {
+    text-align: center;
+}
+
+/*contenedor que contiene el input de la imagen*/
+.imagen {
+    width: 50%;
+    margin: 0 auto;
+    left: 10px;
+    padding: 30px;
+}
+
+    /* la etiqueta de insertar imagen con un borde redondeado y centrando su contenido*/
+    .imagen .form-group {
+        width: 75%;
+        height: 200px;
+        text-align: center;
+        margin: 0 auto;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 10px;
+    }
+
+        /* convirtiendo a la label en un bloque*/
+
+        .imagen .form-group label {
+            display: block;
+        }
+

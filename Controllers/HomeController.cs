@@ -45,6 +45,17 @@ namespace Prototipos_Huertos_Autosustentables.Controllers
             return View();
         }
 
+        public IActionResult Admi()
+        {
+            return View();
+        }
+
+        public IActionResult Crear_Nuevo()
+        {
+            return View();
+        }
+
+
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

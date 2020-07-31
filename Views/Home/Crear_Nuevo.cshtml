@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Relación css a html -->
+    <link rel="stylesheet" href="~/css_administrador/css_admi.css">
+</head>
+<body>
+
+    <!--Titutlo-->
+    <div class="Titulo">
+        <h1>Registro de Cultivo</h1>
+    </div>
+
+    <form class="contenido">
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre_cultivo" placeholder="ejemplo: cilantro">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="regiones">Region:</label>
+                <select class="form-control" id="opcionesRegiones">
+                    <option>Costa</option>
+                    <option>Sierra</option>
+                    <option>Amazonia</option>
+                    <option>Galápagos</option>
+                </select>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="introducccion">Introducccion:</label>
+                <textarea class="form-control" id="introducccion" rows="5" placeholder="Escribir que se necesita"></textarea>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="cuerpo">Cuerpo</label>
+                <textarea class="form-control" id="introducccion" rows="5" placeholder="Escribir como se lo realiza"></textarea>
+            </div>
+            <div class="form-group col-sm-12">
+                <label for="recomendaciones">Recomendaciones:</label>
+                <textarea class="form-control" id="introducccion" rows="5" placeholder="Algunas recomendaciones"></textarea>
+            </div>
+            <div class="botones col-sm-12">
+                <input type="button" class="btn btn-success" id="Guardar" value="Guardar">
+                <input type="button" class="btn btn-danger" id="Eliminar" value="Eliminar">
+                <input type="button" class="btn btn-warning" id="Cancelar" value="Cancelar">
+            </div>
+        </div>
+
+    </form>
+
+    <form class="imagen">
+        <div class="form-group">
+            <h4>Insertar imagen</h4>
+            <input type="file" class="btn btn-secondary" id="imagen">
+            <br /><br />
+
+            <input type="button" class="btn btn-success" id="Guardar" value="Guardar">
+            <input type="button" class="btn btn-danger" id="Eliminar" value="Eliminar">
+            <input type="button" class="btn btn-warning" id="Cancelar" value="Cancelar">
+        </div>
+    </form>
+
+</body>
+</html>
